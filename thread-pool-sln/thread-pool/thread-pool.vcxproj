@@ -23,6 +23,7 @@
     <ClCompile Include="thread_pool.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="algorithm.h" />
     <ClInclude Include="blocking_queue.h" />
     <ClInclude Include="thread_pool.h" />
   </ItemGroup>

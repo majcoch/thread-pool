@@ -1,5 +1,18 @@
 #include "thread_pool.h"
 
+#include <iostream>
+/* Macro for mutex variable name */
+#define SCREEN_GUARD screenGuard
+/* Screen log printing mutex */
+std::mutex SCREEN_GUARD;
+/* Thread safe macro for logging to standard output */
+#define SAFE_LOG(message) SCREEN_GUARD.lock(); \
+                          std::cout <<"Thread [" << std::this_thread::get_id() << "]: " << (message) << std::endl; \
+                          SCREEN_GUARD.unlock();
+
+
+
+
 thread_pool::thread_pool() {
 	unsigned int hw_threads = std::thread::hardware_concurrency();
 	m_thread_count = hw_threads;
@@ -28,15 +41,18 @@ thread_pool::~thread_pool() {
 
 void thread_pool::m_worker_thread() {
 	bool worker_running = true;
+	//SAFE_LOG("I'm alive");
 
 	while (worker_running) {
 		auto task = m_queue.pop();
 		if (nullptr != task) {
+			//SAFE_LOG("Executing task...");
 			task();
 		}
 		else {
 			worker_running = false;
 			m_queue.push(nullptr);
+			//SAFE_LOG("I'm dead");
 		}
 	}
 }

@@ -13,6 +13,9 @@
     <Filter Include="blockig-queue">
       <UniqueIdentifier>{ac0fe1c8-fa61-4553-ad27-5a92d4995ae2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="algorithms">
+      <UniqueIdentifier>{5fa14d68-caf1-4391-b3d6-407c3f6d872f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="thread_pool.h">
@@ -20,6 +23,9 @@
     </ClInclude>
     <ClInclude Include="blocking_queue.h">
       <Filter>blockig-queue</Filter>
+    </ClInclude>
+    <ClInclude Include="algorithm.h">
+      <Filter>algorithms</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
