@@ -41,18 +41,18 @@ thread_pool::~thread_pool() {
 
 void thread_pool::m_worker_thread() {
 	bool worker_running = true;
-	//SAFE_LOG("I'm alive");
+	SAFE_LOG("I'm alive");
 
 	while (worker_running) {
 		auto task = m_queue.pop();
 		if (nullptr != task) {
-			//SAFE_LOG("Executing task...");
+			SAFE_LOG("Executing task...");
 			task();
 		}
 		else {
 			worker_running = false;
 			m_queue.push(nullptr);
-			//SAFE_LOG("I'm dead");
+			SAFE_LOG("I'm dead");
 		}
 	}
 }
