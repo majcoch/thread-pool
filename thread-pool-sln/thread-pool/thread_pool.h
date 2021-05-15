@@ -5,7 +5,6 @@
 #include <functional>
 #include "blocking_queue.h"
 
-
 class thread_pool {
 public:
 	thread_pool();
@@ -20,6 +19,7 @@ public:
 	unsigned int get_thread_count();
 
 	~thread_pool();
+
 private:
 	unsigned int m_thread_count;
 	std::vector<std::thread> m_threads;

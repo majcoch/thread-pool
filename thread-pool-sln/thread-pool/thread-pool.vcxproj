@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="experiments.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="thread_pool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorithm.h" />
     <ClInclude Include="blocking_queue.h" />
+    <ClInclude Include="experiments.h" />
     <ClInclude Include="thread_pool.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

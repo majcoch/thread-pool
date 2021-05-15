@@ -5,16 +5,22 @@
     <ClCompile Include="thread_pool.cpp">
       <Filter>thread-pool</Filter>
     </ClCompile>
+    <ClCompile Include="experiments.cpp">
+      <Filter>experiments</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="thread-pool">
       <UniqueIdentifier>{61dddfe1-8606-4bb7-9918-fc47badb33d1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="blockig-queue">
+    <Filter Include="thread-pool\algorithms">
+      <UniqueIdentifier>{5fa14d68-caf1-4391-b3d6-407c3f6d872f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="thread-pool\blockig-queue">
       <UniqueIdentifier>{ac0fe1c8-fa61-4553-ad27-5a92d4995ae2}</UniqueIdentifier>
     </Filter>
-    <Filter Include="algorithms">
-      <UniqueIdentifier>{5fa14d68-caf1-4391-b3d6-407c3f6d872f}</UniqueIdentifier>
+    <Filter Include="experiments">
+      <UniqueIdentifier>{cadd30e8-800b-4003-b2a7-8a909019d50b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -22,10 +28,13 @@
       <Filter>thread-pool</Filter>
     </ClInclude>
     <ClInclude Include="blocking_queue.h">
-      <Filter>blockig-queue</Filter>
+      <Filter>thread-pool\blockig-queue</Filter>
     </ClInclude>
     <ClInclude Include="algorithm.h">
-      <Filter>algorithms</Filter>
+      <Filter>thread-pool\algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="experiments.h">
+      <Filter>experiments</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

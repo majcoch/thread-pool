@@ -1,31 +1,20 @@
 #include <iostream>
-#include <random>
-#include <algorithm>
-#include <iterator>
-#include <iostream>
-#include <functional>
 
-#include "algorithm.h"
-
-
-void generate_random_data(std::vector<int>& v);
+#include "experiments.h"
 
 int main(int argc, char* argv[]) {
-	thread_pool pool(5);
-	std::cout << "Starting execution with " << pool.get_thread_count() << " threads" << std::endl;
 
-	std::vector<int> v(10);
-	generate_random_data(v);
+	size_t data_size = 100000000;
 
+	unsigned int granulation = 5;
+	unsigned int thread_max = 20;
+	unsigned int thread_step = 1;
+	thread_number_experiment(data_size, granulation, thread_max, thread_step);
 
-	system("pause");
+	unsigned int thread_count = 5;
+	unsigned int granulation_max = 20;
+	unsigned int granulation_step = 1;
+	granulation_level_experiment(data_size, thread_count, granulation_max, granulation_step);
+
 	return 0;
-}
-
-void generate_random_data(std::vector<int> &v) {
-	std::random_device rnd_device;
-	std::mt19937 mersenne_engine{ rnd_device() };
-	std::uniform_int_distribution<int> dist{ 1, 52 };
-	auto gen = [&dist, &mersenne_engine]() { return dist(mersenne_engine); };
-	generate(begin(v), end(v), gen);
 }
