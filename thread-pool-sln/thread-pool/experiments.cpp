@@ -705,4 +705,3 @@ void granulation_level_experiment(size_t data_size, unsigned int thread_count, u
 		output_file.close();
 	}
 }
-

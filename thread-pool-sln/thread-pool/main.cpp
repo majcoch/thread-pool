@@ -1,5 +1,3 @@
-#include <iostream>
-
 #include "experiments.h"
 
 int main(int argc, char* argv[]) {
